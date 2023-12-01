@@ -1,1 +1,13 @@
-/Users/tzuchilin/.config/coc/extensions/package.json
+{
+  "dependencies": {
+    "coc-vimtex": ">=1.1.5",
+    "coc-clangd": ">=0.29.3",
+    "coc-docker": ">=1.0.2",
+    "coc-html": ">=1.8.0",
+    "coc-jedi": ">=0.36.1",
+    "coc-json": ">=1.9.2",
+    "coc-metals": ">=1.0.14",
+    "coc-rls": ">=1.1.6",
+    "coc-rome": ">=1.2.0"
+  }
+}
