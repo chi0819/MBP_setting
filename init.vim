@@ -1,14 +1,16 @@
-:set number
-:set relativenumber
-:set autoindent
-:set tabstop=4
-:set shiftwidth=4
-:set smarttab
-:set softtabstop=4
-:set scrolloff=6
-:set mouse=a
-:set list lcs=tab:\|\ 
-:set updatetime=300 " reduce coc.nvim delay
+set number
+set relativenumber
+set autoindent
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set softtabstop=4
+set scrolloff=6
+set mouse=a
+set list lcs=tab:\|\ 
+set updatetime=300 " reduce coc.nvim delay
+syntax enable
+filetype plugin indent on
 
 call plug#begin()
 
@@ -88,34 +90,10 @@ endif
 
 " Vimtex Setting
 let g:tex_flavor = 'latex'
-let g:vimtex_quickfix_mode = 0 " Manualy use :copen to use syntax error checking window
-
-let g:vimtex_view_general_viewer
-\ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
-let g:vimtex_view_general_options = '-r @line @pdf @tex'
-
-" Skim pdf Viewer Setting for Vimtex
-let g:vimtex_compiler_callback_hooks = ['UpdateSkim']
-
-function! UpdateSkim(status)
-if !a:status | return | endif
-
-let l:out = b:vimtex.out()
-let l:tex = expand('%:p')
-let l:cmd = [g:vimtex_view_general_viewer, '-r']
-
-if !empty(system('pgrep Skim'))
-	call extend(l:cmd, ['-g'])
-endif
-
-if has('nvim')
-	call jobstart(l:cmd + [line('.'), l:out, l:tex])
-elseif has('job')
-	call job_start(l:cmd + [line('.'), l:out, l:tex])
-else
-	call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
-endif
-endfunction
+let g:vimtex_view_method = 'skim'
+let g:vimtex_quickfix_mode = 0 " manualy use :copen to check error
+let g:vimtex_view_skim_sync = 1 " Value 1 allows forward search after every successful compilation
+let g:vimtex_view_skim_activate = 1 " Value 1 allows change focus to skim after command `:VimtexView` is given
 
 let g:vimtex_toc_config = { 
 \ 'name' : 'TOC',
