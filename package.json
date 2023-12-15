@@ -8,6 +8,8 @@
     "coc-json": ">=1.9.2",
     "coc-metals": ">=1.0.14",
     "coc-rls": ">=1.1.6",
-    "coc-rome": ">=1.2.0"
+    "coc-rome": ">=1.2.0",
+    "coc-css": ">=2.1.0",
+    "coc-htmlhint": ">=0.6.1"
   }
 }

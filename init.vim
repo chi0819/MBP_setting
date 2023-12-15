@@ -65,6 +65,9 @@ nnoremap <Space>u <C-r> <CR>
 
 nnoremap <Space>e <ESC>:NERDTreeToggle<CR> 
 " open nerdtree directory
+nnoremap <Space>r <ESC>\ll\ll<CR>
+
+inoremap oo <ESC>o
 
 inoremap <C-c> <C-n>
 inoremap <C-d> <C-p>
@@ -103,6 +106,12 @@ let g:vimtex_toc_config = {
 \ 'show_help' : 1,
 \ 'show_numbers' : 1,
 \} " Manualy use :VimtexTocToggle to open article directory window
+
+" often used Vimtex instructions
+" \lv : open pdf viewer view pdf
+" \ll : compile .tex file -> every time edit file, compiler automatic recompiling
+" \lk : stop compilation process
+" \lc : clean auxiliary files
 
 " Indentline Setting
 let g:indentLine_setColors = 0
