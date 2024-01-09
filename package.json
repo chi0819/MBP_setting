@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "coc-vimtex": ">=1.1.5",
-    "coc-clangd": ">=0.29.3",
+    "coc-clangd": ">=0.30.1",
     "coc-docker": ">=1.0.2",
     "coc-html": ">=1.8.0",
     "coc-jedi": ">=0.36.1",
@@ -10,6 +10,8 @@
     "coc-rls": ">=1.1.6",
     "coc-rome": ">=1.2.0",
     "coc-css": ">=2.1.0",
-    "coc-htmlhint": ">=0.6.1"
-  }
+    "coc-htmlhint": ">=0.6.1",
+    "coc-java": ">=1.15.2"
+  },
+  "lastUpdate": 1704733042717
 }

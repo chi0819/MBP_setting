@@ -8,7 +8,6 @@ set softtabstop=4
 set scrolloff=6
 set mouse=a
 set list lcs=tab:\|\ 
-set updatetime=300 " reduce coc.nvim delay
 syntax enable
 filetype plugin indent on
 
@@ -23,8 +22,6 @@ Plug 'vhda/verilog_systemverilog.vim'
 Plug 'HonkW93/automatic-verilog'
 Plug 'Yggdroot/indentLine' " indentline make code blocks readable
 Plug 'lervag/vimtex' " for LaTeX
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " auto completion
-Plug 'honza/vim-snippets' " show information about function, data type and key value
 
 set encoding=UTF-8
 
@@ -66,30 +63,6 @@ nnoremap <Space>u <C-r> <CR>
 nnoremap <Space>e <ESC>:NERDTreeToggle<CR> 
 " open nerdtree directory
 nnoremap <Space>r <ESC>\ll\ll<CR>
-
-inoremap oo <ESC>o
-
-inoremap <C-c> <C-n>
-inoremap <C-d> <C-p>
-" this two keymap for coc popup menu
-" crtl+c for scrolling down
-" crtl+d for scrolling up
-
-" Coc.nvim Setting
-" Use enter to select first suggestion
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-	\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>\<BS>"
-
-" Can scroll down auto completion suggestion window
-" Use ctrl+f to scroll down, use crtl+b to scroll up
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif
 
 " Vimtex Setting
 let g:tex_flavor = 'latex'
